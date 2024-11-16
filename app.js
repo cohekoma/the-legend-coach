@@ -1,7 +1,7 @@
-// const firstTeamOvr = 90;
-// const secondTeamOvr = 80;
-
 const startGameBTN = document.getElementById("start-btn");
+const coachNameTxt = document.querySelector("#coachName");
+
+coachNameTxt.innerText = "Chan"
 
 startGameBTN.onclick = () => {
   console.log( "Win Possibility: " + calculateMatchOutcome(20, 80) );
@@ -13,4 +13,12 @@ function calculateMatchOutcome(firstTeamOvr, secondTeamOvr) {
   const winPossibility = strengthDifferent * 1;
 
   return winPossibility
+}
+
+function manageCoach() {
+  console.log("Manage Your Coach");
+}
+
+function manageClub() {
+  console.log("Manage Club");
 }
