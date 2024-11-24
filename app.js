@@ -1,7 +1,7 @@
-// const firstTeamOvr = 90;
-// const secondTeamOvr = 80;
+const startGameBTN = document.getElementById("startGame");
+const coachNameTxt = document.querySelector("#coachName");
 
-const startGameBTN = document.getElementById("start-btn");
+coachNameTxt.innerText = "Chan"
 
 startGameBTN.onclick = () => {
   console.log( "Win Possibility: " + calculateMatchOutcome(20, 80) );
@@ -10,7 +10,15 @@ startGameBTN.onclick = () => {
 function calculateMatchOutcome(firstTeamOvr, secondTeamOvr) {
   const baseWinRate = 50;
   const strengthDifferent = ( firstTeamOvr > secondTeamOvr ) ? firstTeamOvr - secondTeamOvr : secondTeamOvr - firstTeamOvr;
-  const winPossibility = strengthDifferent * 1;
+  const winPossibility = strengthDifferent * 2;
 
   return winPossibility
+}
+
+function manageCoach() {
+  console.log("Manage Your Coach");
+}
+
+function manageClub() {
+  console.log("Manage Club");
 }
