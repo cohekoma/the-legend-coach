@@ -1,4 +1,4 @@
-const startGameBTN = document.getElementById("start-btn");
+const startGameBTN = document.getElementById("startGame");
 const coachNameTxt = document.querySelector("#coachName");
 
 coachNameTxt.innerText = "Chan"
@@ -10,7 +10,7 @@ startGameBTN.onclick = () => {
 function calculateMatchOutcome(firstTeamOvr, secondTeamOvr) {
   const baseWinRate = 50;
   const strengthDifferent = ( firstTeamOvr > secondTeamOvr ) ? firstTeamOvr - secondTeamOvr : secondTeamOvr - firstTeamOvr;
-  const winPossibility = strengthDifferent * 1;
+  const winPossibility = strengthDifferent * 2;
 
   return winPossibility
 }
