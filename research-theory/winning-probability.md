@@ -25,4 +25,10 @@ The factors above are based on numbers, statistics, which make them certain and 
 
 ### Implementation
 
-What I write above are very football-ish. We are trying to implement a game so we must try and convert everything into numbers. Let's get back to the 90% winning rate for Man Utd and 10% winning rate for Ipswich Town that I give you above. 
+What I write above are very football-ish. We are trying to implement a game so we must try and convert everything into numbers. Let's get back to the 90% winning rate for Man Utd and 10% winning rate for Ipswich Town that I give you above. When I write this, I don't have any stats supported me yet. This is based pretty much on assumption. In order to implement this assumption into our game, we definitely need to make our thoughts *"numeric"*.
+
+In games like FIFA, we shall have something like an overall score / stat / point assigned to each team, which indicates how strong a team is. So, I think at the moment, I will try to assign this stat for each team. 
+
+### Update on 25th Nov
+
+One point that I missed when I was writing about the algorithm to find the possibility was that I completely forgot about the drawing / tied result. Which then led to one interesting result: Man Utd didn't win Ipswich Town, the result was a tied (1-1).
