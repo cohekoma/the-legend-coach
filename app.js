@@ -4,7 +4,7 @@ const coachNameTxt = document.querySelector("#coachName");
 coachNameTxt.innerText = "Chan"
 
 startGameBTN.onclick = () => {
-  console.log( "Win Possibility: " + calculateMatchOutcome(20, 80) );
+  console.log(Date.now());
 }
 
 function calculateMatchOutcome(firstTeamOvr, secondTeamOvr) {
