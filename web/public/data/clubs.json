@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,    
+        "leagueId": 1,
+        "name": "Red Devils FC",
+        "stadium": "Theater of Dream"
+    },
+    {
+        "id": 2,
+        "leagueId": 1,
+        "name": "The Crane FC",
+        "stadium": "Kenny St"
+    }
+]

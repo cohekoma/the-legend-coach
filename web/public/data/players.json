@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "clubId": 1,
+        "name": "Bruno Ferdinand",
+        "position": "CAM",
+        "overall": 88,
+        "nationality": "Portugal"
+    },
+
+    {
+        "id": 2,
+        "clubId": 1,
+        "name": "Benjamin Seski",
+        "position": "ST",
+        "overall": 81,
+        "nationality": "Slovenia"
+    },
+
+    {
+        "id": 3,
+        "clubId": 1,
+        "name": "Lisandro Martin",
+        "position": "LCB",
+        "overall": 88,
+        "nationality": "Argentina"
+    }
+]
