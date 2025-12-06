@@ -1,24 +1,20 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import Phaser from 'phaser';
+class MenuScene extends Phaser.Scene {
+  constructor() { super('menu'); }
+  preload() { this.load.image('background', '/assets/images/main_menu_bg.png'); }
+  create() {
+    this.add.image(640, 360, 'background').setDisplaySize(1280, 720);
+    const btn = this.add.text(640, 360, 'Start Game', { fontSize: '32px', color: '#000' }).setOrigin(0.5);
+    btn.setInteractive().on('pointerup', () => this.scene.start('game'));
+  }
+}
+class GameScene extends Phaser.Scene { create() { this.add.text(640, 360, 'Game loop'); } }
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+new Phaser.Game({
+  type: Phaser.AUTO,
+  width: 1280,
+  height: 720,
+  parent: 'app',
+  scene: [MenuScene, GameScene],
+  physics: { default: 'arcade' }
+});
