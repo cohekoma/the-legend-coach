@@ -13,6 +13,14 @@ type Team struct {
 	Players []Player
 }
 
+func (team *Team) PrintSquad() {
+	fmt.Printf("--- Squad List of %s ---\n", team.Name)
+
+	for index, player := range team.Players {
+		fmt.Printf("[%d] Player info: %s - %s - %d\n", index, player.Name, player.Position, player.Overall)
+	}
+}
+
 func main() {
 	p1 := Player{
 		Name:     "Bruno Fernandes",
@@ -25,6 +33,5 @@ func main() {
 		Players: []Player{p1},
 	}
 
-	fmt.Printf("This is %s\n", t1.Name)
-	fmt.Printf("The captain of the team is %s, he's playing at the role %s and he's rated with %d in overall!\n", p1.Name, p1.Position, p1.Overall)
+	t1.PrintSquad()
 }
