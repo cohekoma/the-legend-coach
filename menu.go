@@ -7,9 +7,10 @@ type MenuItem struct {
 	W, H   int
 }
 
-func (m MenuItem) Contains(px, py int) bool {
-	return px >= m.X &&
-		px <= m.X+m.W &&
-		py >= m.Y &&
-		py <= m.Y+m.H
+// check if the mouse cursor is within the current menu item (meaning player is click the item)
+func (item MenuItem) Contains(px, py int) bool {
+	return px >= item.X &&
+		px <= item.X+item.W &&
+		py >= item.Y &&
+		py <= item.Y+item.H
 }
