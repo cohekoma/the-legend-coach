@@ -1,31 +1,30 @@
-package main
+package scene
 
 import (
 	"image/color"
 
+	"github.com/cohekoma/the-legend-coach/internals/ui"
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 )
 
-type Screen int
-
 const (
-	ScreenInbox Screen = iota
+	ScreenInbox int = iota
 	ScreenSquad
 	ScreenTactics
 	ScreenSchedule
 	ScreenClub
 )
 
-func drawSidebar(screen *ebiten.Image, gameState *Game) {
-	ebitenutil.DrawRect(screen, 0, 0, 220, ScreenHeight, color.RGBA{R: 28, G: 28, B: 36, A: 255})
+func DrawSidebar(screen *ebiten.Image, currentScene int, menuItems []ui.MenuItem) {
+	ebitenutil.DrawRect(screen, 0, 0, 220, 1800, color.RGBA{R: 28, G: 28, B: 36, A: 255})
 
 	ebitenutil.DebugPrintAt(screen, "THE LEGEND COACH", 20, 30)
 
-	for _, item := range gameState.menuItems {
+	for _, item := range menuItems {
 		buttonColor := color.RGBA{R: 45, G: 45, B: 55, A: 255}
 
-		if gameState.currentScreen == item.Target {
+		if currentScene == item.Target {
 			buttonColor = color.RGBA{R: 80, G: 80, B: 110, A: 255}
 		}
 
@@ -42,10 +41,10 @@ func drawSidebar(screen *ebiten.Image, gameState *Game) {
 	}
 }
 
-func drawContent(screen *ebiten.Image, gameState *Game) {
+func DrawContent(screen *ebiten.Image, currentScreen int) {
 	ebitenutil.DrawRect(screen, 240, 40, 680, 460, color.RGBA{R: 34, G: 34, B: 42, A: 255})
 
-	switch gameState.currentScreen {
+	switch currentScreen {
 	case ScreenInbox:
 		ebitenutil.DebugPrintAt(screen, "Inbox", 270, 70)
 		ebitenutil.DebugPrintAt(screen, "- Assistant Manager: Training report is ready.", 270, 120)

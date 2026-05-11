@@ -1,8 +1,8 @@
-package main
+package ui
 
 type MenuItem struct {
 	Label  string
-	Target Screen
+	Target int
 	X, Y   int
 	W, H   int
 }
